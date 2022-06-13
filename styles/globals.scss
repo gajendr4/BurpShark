@@ -1,0 +1,215 @@
+@use "@carbon/react";
+@use "@carbon/ibmdotcom-styles";
+
+// $font-prefix: './custom/path/to/font/files';
+// @import 'node_modules/@ibm/plex/scss/ibm-plex.scss';
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap");
+@import "../node_modules/@ibm/plex/css/sans.css";
+
+.cds--g100 {
+  --cds-border-interactive: #0f62fe;
+}
+
+html,
+body {
+  background: white;
+  font-family: IBM Plex Sans, Helvetica Neue, Arial, sans-serif;
+  scrollbar-width: thin;
+}
+
+.tab-margin {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.cds--tabs__nav-link {
+  font-size: 1rem !important;
+  color: white !important;
+  transition: none;
+}
+
+.cds--tabs.cds--tabs--contained .cds--tabs__nav-item {
+  padding-left: 13px;
+  background-color: black;
+}
+
+.cds--tabs.cds--tabs--contained .cds--tabs__nav-item + .cds--tabs__nav-item {
+  padding-left: 13px;
+  box-shadow: none;
+}
+
+.cds--tabs.cds--tabs--contained
+  .cds--tabs__nav-item.cds--tabs__nav-item--selected {
+  background: #393939;
+  box-shadow: inset 0 3px 0 0 var(--cds-border-interactive, #0f62fe);
+}
+
+.cds--tabs.cds--tabs--contained .cds--tabs__nav-item--selected,
+.cds--tabs .cds--tabs__nav-item--selected,
+.cds--tabs .cds--tabs__nav-item--selected:focus .cds--tabs__nav-link:focus,
+.cds--tabs .cds--tabs__nav-item--selected:active .cds--tabs__nav-link:active {
+  font-weight: 400;
+}
+
+@media (min-width: 99rem) {
+  .tab-margin {
+    // max-width: 96.5rem;
+    padding-left: 424px !important;
+    padding-right: 0;
+  }
+  .landing-page__heading {
+    font-size: 4.75rem !important;
+    line-height: 1.13;
+  }
+}
+
+@media (min-width: 66rem) {
+  .tab-margin {
+    padding-left: calc(25% + 1.5rem);
+    padding-right: 2rem;
+    border-bottom: 1px solid #464646;
+  }
+
+  .bx--offset-lg-3 {
+    margin-left: 20.75% !important;
+  }
+
+  .landing-page__heading {
+    font-size: calc(1.82813rem + 2.34375vw);
+  }
+}
+
+@media (min-width: 42rem) {
+  .landing-page__heading {
+    font-size: 2.625rem;
+    font-size: calc(1.3125rem + 3.125vw);
+  }
+}
+
+.landing-page__heading {
+  font-weight: 300;
+  letter-spacing: 0;
+  line-height: 1.19;
+  margin-bottom: 2rem;
+  margin-top: auto;
+}
+
+.tab-must {
+  background: #000;
+  margin: 0;
+  position: sticky;
+  top: calc(3rem - 1px);
+  width: 100%;
+  z-index: 6000;
+}
+
+// .cds--side-nav__link{
+//     display: flex;
+//     flex-direction: row-reverse;
+//     justify-content: space-between;
+// }
+
+// .cds--side-nav__icon .cds--side-nav__icon--small{
+//     margin-right: 0!important;
+// }
+
+// Icons
+.outboundLink :global(.bx--side-nav__icon:not(.bx--side-nav__submenu-chevron)) {
+  display: inline-block;
+  flex: 0;
+  margin-right: 0 !important;
+  height: 1rem;
+}
+
+// Moves icons to the right
+.outboundLink {
+  flex-direction: row-reverse;
+  justify-content: space-between;
+
+  .cds--side-nav__icon {
+    margin-right: 0;
+    padding-right: 0;
+  }
+  .cds--side-nav__icon--small {
+    margin-right: 0;
+    padding-right: 0;
+  }
+}
+
+/* total width */
+body::-webkit-scrollbar {
+  background-color: transparent;
+  width: 3px;
+  scrollbar-width: thin;
+}
+
+/* background of the scrollbar except button or resizer */
+body::-webkit-scrollbar-track {
+  background-color: black;
+}
+body::-webkit-scrollbar-track:hover {
+  background-color: black;
+}
+
+/* scrollbar itself */
+body::-webkit-scrollbar-thumb {
+  background-color: #848383;
+  border-radius: 1px;
+  border: 1px solid #464646;
+}
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #adacac;
+  border: 1px solid #464646;
+}
+
+/* set button(top and bottom of the scrollbar) */
+body::-webkit-scrollbar-button {
+  display: none;
+}
+
+body::-webkit-scrollbar-corner {
+  background-color: transparent;
+} /* if both the vertical and the horizontal bars appear, then perhaps the right bottom corner also needs to be styled */
+
+// navigation scroll
+
+/* total width */
+.cds--side-nav__items::-webkit-scrollbar {
+  background-color: transparent;
+  width: 3px;
+  scrollbar-width: thin;
+}
+
+/* background of the scrollbar except button or resizer */
+.cds--side-nav__items::-webkit-scrollbar-track {
+  background-color: black;
+}
+.cds--side-nav__items::-webkit-scrollbar-track:hover {
+  background-color: black;
+}
+
+/* scrollbar itself */
+.cds--side-nav__items::-webkit-scrollbar-thumb {
+  background-color: #848383;
+  border-radius: 1px;
+  border: 1px solid #464646;
+}
+.cds--side-nav__items::-webkit-scrollbar-thumb:hover {
+  background-color: #adacac;
+  border: 1px solid #464646;
+}
+
+/* set button(top and bottom of the scrollbar) */
+.cds--side-nav__items::-webkit-scrollbar-button {
+  display: none;
+}
+
+.cds--side-nav__items::-webkit-scrollbar-corner {
+  background-color: transparent;
+} /* if both the vertical and the horizontal bars appear, then perhaps the right bottom corner also needs to be styled */
+
+.cds--side-nav__items {
+  scrollbar-width: thin;
+}
+
+
