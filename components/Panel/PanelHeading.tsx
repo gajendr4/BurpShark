@@ -1,4 +1,4 @@
-export default function PanelHeading({ children }) {
+export default function PanelHeading({ children }: any): JSX.Element {
   return (
     <>
       <div id="main-content" style={{ background: "black" }}>

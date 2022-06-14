@@ -32,15 +32,15 @@ import {
 } from "@carbon/react/icons";
 import SwitcherIco from "./SwitcherIco";
 import { useState } from "react";
-const StoryContent = ({ children }) => {
+const StoryContent = ({ children }: any) => {
   const content = <>{children}</>;
   return <>{content}</>;
 };
 
-export default function Navbar({ children }) {
+export default function Navbar({ children }: any) {
   const router = useRouter();
 
-  function fired(route) {
+  function fired({ route }: any) {
     return route === router.pathname;
   }
 
@@ -80,7 +80,7 @@ export default function Navbar({ children }) {
 
   const waves = ["/waves"];
 
-  const topic = (element) => element === router.pathname;
+  const topic = (element: any) => element === router.pathname;
 
   const [state, changeState] = useState(false);
   const outbound = true;
@@ -94,7 +94,6 @@ export default function Navbar({ children }) {
         .dividerswitcher {
           color: #525252;
         }
-
         .dividerswitcher span {
           color: #c6c6c6;
           font-size: var(--cds-label-01-font-size, 0.75rem);
@@ -106,7 +105,7 @@ export default function Navbar({ children }) {
 
       <Theme theme="g100">
         <HeaderContainer
-          render={({ isSideNavExpanded, onClickSideNavExpand }) => (
+          render={({ isSideNavExpanded, onClickSideNavExpand }: any) => (
             <Header aria-label="Carbon Tutorial">
               <SkipToContent />
               <HeaderMenuButton
@@ -115,20 +114,21 @@ export default function Navbar({ children }) {
                 isActive={isSideNavExpanded}
               />
               {/* BOND TITLE */}
-              <Link href="/" passHref>
-                <HeaderName prefix="">
+              <HeaderName prefix="">
+                <Link href="/" passHref>
                   <span
                     style={{
                       fontWeight: "600",
                       fontSize: "16px",
                       fontFamily:
                         "IBM Plex Sans,Helvetica Neue,Arial,sans-serif",
+                      cursor: "pointer",
                     }}
                   >
                     Physics for JEEADV.ac.in
                   </span>
-                </HeaderName>
-              </Link>
+                </Link>
+              </HeaderName>
 
               <SideNav
                 aria-label=""
@@ -401,7 +401,7 @@ export default function Navbar({ children }) {
                     changeState(!state);
                   }}
                   tooltipAlignment="end"
-                  style={{ background: !state ? "" : "rgb(22, 22, 22)" }}
+                  style={{ background: !state ? "#161616" : "rgb(22, 22, 22)" }}
                 >
                   {/* <Switcher size={20} /> */}
                   {!state && <SwitcherIco />}
