@@ -556,9 +556,9 @@ $$
   return (
     // REPLACE YOUR QUESTION BY THE CONTENT & DESIRED MARKDOWN PREFERENCES
     <div style={{ fontSize: "1.3rem" }}>
-      {/* <MathpixLoader>
+      <MathpixLoader>
         <MathpixMarkdown text={KinematicsSample} />
-      </MathpixLoader> */}
+      </MathpixLoader>
     </div>
   );
 }
