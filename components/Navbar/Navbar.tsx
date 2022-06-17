@@ -227,7 +227,7 @@ export default function Navbar({ children }: any) {
                         Rotational Mechanics
                       </SideNavMenuItem>
                     </Link>
-                    <Link passHref href="/mechanics/fludis">
+                    <Link passHref href="/mechanics/fluids">
                       <SideNavMenuItem isActive={fluids.some(topic)}>
                         Fluid Mechanics
                       </SideNavMenuItem>
