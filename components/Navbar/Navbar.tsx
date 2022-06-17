@@ -49,6 +49,12 @@ export default function Navbar({ children }: any) {
     "/mechanics/kinematics/questions",
   ];
 
+  const fluids = [
+    "/mechanics/fluids",
+    "/mechanics/fluids/sheets",
+    "/mechanics/fluids/AITS",
+  ];
+
   const mechanics = [
     "/mechanics/kinematics",
     "/mechanics/kinematics/questions",
@@ -62,6 +68,8 @@ export default function Navbar({ children }: any) {
     "/mechanics/mechanicalproperties",
     "/mechanics/shm",
     "/mechanics/gravitation",
+    "/mechanics/fluids/sheets",
+    "/mechanics/fluids/AITS",
   ];
   const electromagnetism = [
     "/electromagnetism/electrostatics",
@@ -88,6 +96,14 @@ export default function Navbar({ children }: any) {
   return (
     <>
       <style jsx>{`
+        .cds--header-panel {
+          transform: translateX(0);
+          transition: all 0.11s cubic-bezier(0.2, 0, 1, 0.9);
+        }
+        .cds--header-panel--expanded {
+          transform: translateX(16rem);
+          transition: all 0.11s cubic-bezier(0.2, 0, 1, 0.9);
+        }
         .cds--side-nav__icon .cds--side-nav__icon--small {
           margin-right: 0 !important;
         }
@@ -211,6 +227,11 @@ export default function Navbar({ children }: any) {
                         Rotational Mechanics
                       </SideNavMenuItem>
                     </Link>
+                    <Link passHref href="/mechanics/fludis">
+                      <SideNavMenuItem isActive={fluids.some(topic)}>
+                        Fluid Mechanics
+                      </SideNavMenuItem>
+                    </Link>
                     <Link passHref href="/mechanics/gravitation">
                       <SideNavMenuItem
                         isActive={fired("/mechanics/gravitation")}
@@ -223,11 +244,7 @@ export default function Navbar({ children }: any) {
                         Simple Harmonic Motion
                       </SideNavMenuItem>
                     </Link>
-                    <Link passHref href="/mechanics/fluids">
-                      <SideNavMenuItem isActive={fired("/mechanics/fluids")}>
-                        Fluid Mechanics
-                      </SideNavMenuItem>
-                    </Link>
+
                     <Link passHref href="/mechanics/mechanicalproperties">
                       <SideNavMenuItem
                         isActive={fired("/mechanics/mechanicalproperties")}
@@ -371,6 +388,7 @@ export default function Navbar({ children }: any) {
                     renderIcon={outbound ? Launch : undefined}
                     className="outboundLink outbound"
                     // element={outbound ? "a" : Link}
+                    style={{marginBottom: "3rem"}}
                     direction="right"
                   >
                     Our Web Standards
@@ -416,6 +434,7 @@ export default function Navbar({ children }: any) {
                 style={{
                   background: "rgb(22, 22, 22)",
                 }}
+                className={!state ? "slideIn" : "slideOut"}
                 // isPersistent={false}
               >
                 <Switcher aria-label="Switcher Container">
@@ -423,6 +442,7 @@ export default function Navbar({ children }: any) {
                     href="#"
                     aria-label="Link 10"
                     style={{ cursor: "initial", background: `#161616` }}
+                    className={!state ? "slideIn" : "slideOut"}
                   >
                     <div className="dividerswitcher">
                       <span>Foundations</span>
